@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="moment.min.js"></script>
+</head>
+<body>
+<h2>moment().format('YYYY-MM-DD,HH:CC:SS');</h2>
+<script>
+    document.write("moment "+moment().format('YYYY-MM-DD,HH:mm:ss'));
+    document.write("<br>");
+    var datetime = moment().format('YYYY-MM-DD HH:mm:ss');
+    document.write(datetime);
+    document.write("<br>");
+//
+////    document.write(d.getFullYear()+'-'+(parseInt(d.getMonth(),10)+1)+'-'+d.getDate()+" "+d.getHours()+':'+d.getMinutes()+':'+d.getSeconds());
+//    document.write("<br>");
+    document.write(new Date().toLocaleDateString());
+    document.write("<br>");
+    function parseTwo (d) {
+        var intD=parseInt(d);
+        if(intD.length<2){
+            d='0'+d;
+        }
+        return d;
+        
+    }
+
+//    var parseInt=function () {
+        var d=new Date();
+        var y1=d.getFullYear();
+    //月份 0-11  月份 单独处理
+        var m=d.getMonth();
+        var intMonth=(parseInt(m))+1;
+        if(intMonth<=9)
+            m='0'+intMonth;
+//            m='0'+intMonth;
+
+
+        var day=d.getDate();
+        var intDay=(parseInt(day))+1;
+        if(intDay<=9)
+                day='0'+day;
+
+        var h=d.getHours();
+    parseTwo(h);
+
+        var min=d.getMinutes();
+    parseTwo(min);
+        var s=d.getSeconds();
+    parseTwo(s);
+//    };
+    document.write(y1+'-'+m+'-'+day+" "+h+':'+min+':'+s);
+    document.write("<br>");
+</script>
+
+</body>
+</html>
